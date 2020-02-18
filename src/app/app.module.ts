@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BeerComponent } from './component/beer/beer.component';
+import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BeerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    HttpClientModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
