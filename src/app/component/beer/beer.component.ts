@@ -15,6 +15,8 @@ export class BeerComponent implements OnInit {
   dataSource: MatTableDataSource<IBeer>;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
+  count = 25;
+
   constructor(private beerService: BeerService ) { }
 
   async ngOnInit() {
@@ -27,4 +29,10 @@ export class BeerComponent implements OnInit {
   applyFilter(filter: string){
     this.dataSource.filter = filter.trim().toLowerCase();
   }
+  async getnewBeer() { 
+    const data = await this.beerService.getbeersbycount(++this.count);
+     this.dataSource = new MatTableDataSource(data);
+  
+  }
 }
+// testing

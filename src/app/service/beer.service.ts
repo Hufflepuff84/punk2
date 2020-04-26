@@ -12,4 +12,10 @@ export class BeerService {
     let data = await this.apiService.get('beers');
     return data
   }
+  async getbeersbycount(number:number){
+     return await this.apiService.getcount(number)
+    
+  }
 }
+
+
